@@ -1,1 +1,44 @@
-print("ola")
+valor1 = float(input("Escolha o valor 1: "))
+valor2 = float(input("Escolha o valor 2: "))
+valor3 = float(input("Escolha o valor 3: "))
+valor4 = float(input("Escolha o valor 4: "))
+valor5 = float(input("Escolha o valor 5: "))
+valor6 = float(input("Escolha o valor 6: "))
+valor7 = float(input("Escolha o valor 7: "))
+valor8 = float(input("Escolha o valor 8: "))
+valor9 = float(input("Escolha o valor 9: "))
+valor10 = float(input("Escolha o valor 10: "))
+
+
+lista_valores = [valor1, valor2, valor3, valor4, valor5, valor6, valor7, valor8, valor9, valor10,]
+lista_valores.sort()
+escolha = input('''Escolha qual variavel deseja usar:
+(E) para media;
+(M) para mediana;
+(V) para variancia;
+(D) para desvio padrao.
+        ''')
+
+if (escolha == "E" or escolha == "e"):
+  soma = sum(lista_valores)   # sum e para somar todos valores da lista
+  qtd_valores = len(lista_valores)  #len e para contar quantos caracters tem na lista
+  media = (soma / qtd_valores)
+  print("Sua media foi {}" .format(round(media, 2)))
+elif (escolha == "M" or escolha == "m"):
+  import random
+  import statistics
+  statistics.median_low(lista_valores)
+  statistics.median_high(lista_valores)
+  print("Os valores da medianas são {} e {}" .format(statistics.median_low(lista_valores), statistics.median_high(lista_valores)))
+elif (escolha == "V" or escolha =="v"):
+  import random
+  import statistics
+  statistics.variance(lista_valores)
+  print("Sua variancia é {}" .format(round(statistics.variance(lista_valores), 2)))
+elif (escolha == "D" or escolha == "d"):
+  import random
+  import statistics
+  statistics.stdev(lista_valores)
+  print("Os valores do desvio padrao é {}" .format(round(statistics.stdev(lista_valores)), 2))
+else:
+  print("O valor deve ser um dos acima!!!")
